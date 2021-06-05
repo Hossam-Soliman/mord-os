@@ -1,32 +1,53 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+//actions
+import {
+  setSigninFormEmail,
+  setSigninFormPassword,
+} from "../store/auth/AuthActions";
+//selectors
+import {
+  getSigninFormEmail,
+  getSigninFormPassword,
+} from "../store/auth/AuthSelectors";
 
 const LoginPage = () => {
+  const email = useSelector((state) => getSigninFormEmail({ state })),
+    password = useSelector((state) => getSigninFormPassword({ state })),
+    dispatch = useDispatch();
+
+  const handleSignInEmail = ({ target: { value } }) => {
+    dispatch(setSigninFormEmail(value));
+  };
+
+  const handleSignInPassword = ({ target: { value } }) => {
+    dispatch(setSigninFormPassword(value));
+  };
+
   return (
     <form className='login-form'>
       <h1>Login</h1>
       <div className='form-input-material'>
         <input
-          type='text'
-          name='username'
-          id='username'
+          type='email'
           placeholder=' '
-          autocomplete='off'
           required
           className='form-control-material'
+          onChange={handleSignInEmail}
+          value={email}
         />
-        <label for='username'>Username</label>
+        <label>Email</label>
       </div>
       <div className='form-input-material'>
         <input
           type='password'
-          name='password'
-          id='password'
           placeholder=' '
-          autocomplete='off'
           required
           className='form-control-material'
+          onChange={handleSignInPassword}
+          value={password}
         />
-        <label for='password'>Password</label>
+        <label>Password</label>
       </div>
       <button type='submit' className='btn btn-ghost'>
         Login
