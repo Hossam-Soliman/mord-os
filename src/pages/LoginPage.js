@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   setSigninFormEmail,
   setSigninFormPassword,
+  setSignIn,
 } from "../store/auth/AuthActions";
 //selectors
 import {
@@ -22,6 +23,10 @@ const LoginPage = () => {
 
   const handleSignInPassword = ({ target: { value } }) => {
     dispatch(setSigninFormPassword(value));
+  };
+
+  const handleSubmit = () => {
+    dispatch(setSignIn());
   };
 
   return (
@@ -49,7 +54,7 @@ const LoginPage = () => {
         />
         <label>Password</label>
       </div>
-      <button type='submit' className='btn btn-ghost'>
+      <button className='btn btn-ghost' onClick={handleSubmit}>
         Login
       </button>
     </form>

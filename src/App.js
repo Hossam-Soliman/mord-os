@@ -12,8 +12,13 @@ function App() {
     <BrowserRouter>
       <div className='app'>
         <Switch>
-          <Route path='/' component={LoginPage} />
-          <Route exact path='/' render={() => <Redirect to='/home' />} />
+          <Route path='/login' component={LoginPage} />
+          <Route
+            exact
+            path='/'
+            component={HomePage}
+            // render={() => <Redirect to='/home' />}
+          />
         </Switch>
         <Footer />
       </div>
