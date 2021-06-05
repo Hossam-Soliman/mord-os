@@ -11,7 +11,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className='app'>
-        {/* <Navbar /> */}
         <Switch>
           <Route path='/' component={LoginPage} />
           <Route exact path='/' render={() => <Redirect to='/home' />} />
