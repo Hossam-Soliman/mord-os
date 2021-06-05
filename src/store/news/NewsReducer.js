@@ -7,14 +7,9 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_SIGNIN_FORM_EMAIL": {
+    case "SET_UPDATED_NEWS": {
       return updateObject(state, {
-        email: action.value,
-      });
-    }
-    case "SET_SIGNIN_FORM_PASSWORD": {
-      return updateObject(state, {
-        password: action.value,
+        newsList: action.payload,
       });
     }
     default:

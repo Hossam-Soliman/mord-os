@@ -7,6 +7,11 @@ import LoginPage from "./pages/LoginPage";
 //components
 import Footer from "./components/shared/Footer";
 import SideNav from "./components/shared/SideNav";
+import RegistrationRoute from "./routing/RegistrationRoute";
+import PrivateRoute from "./routing/PrivateRoute";
+import { registerationRoutes, privateRoutes } from "./routing/RoutesConfig";
+//urls
+import { getHomePageUrl, getLoginPageUrl } from "./constants/AppUrls";
 //selectors
 import { getIsLoggedIn } from "./store/app/AppSelectors";
 
@@ -17,7 +22,7 @@ function App() {
       <div className='app'>
         {isLoggedIn && <SideNav />}
         <Switch>
-          <Route
+          {/* <Route
             exact
             path='/home'
             component={isLoggedIn ? HomePage : LoginPage}
@@ -27,7 +32,27 @@ function App() {
             exact
             path='/login'
             component={isLoggedIn ? HomePage : LoginPage}
+          /> */}
+          <Redirect
+            exact
+            from='/'
+            to={isLoggedIn ? getHomePageUrl() : getLoginPageUrl()}
           />
+          {registerationRoutes.map((route, i) => (
+            <RegistrationRoute
+              path={route.path}
+              component={route.component}
+              key={i}
+            />
+          ))}
+          {privateRoutes.map((route, i) => (
+            <PrivateRoute
+              path={route.path}
+              component={route.component}
+              exact={route.exact}
+              key={i}
+            />
+          ))}
         </Switch>
         {/* {isLoggedIn && <Footer />} */}
       </div>
