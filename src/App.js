@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 //components
 import Footer from "./components/shared/Footer";
+import SideNav from "./components/shared/SideNav";
 //selectors
 import { getIsLoggedIn } from "./store/app/AppSelectors";
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className='app'>
+        {isLoggedIn && <SideNav />}
         <Switch>
           <Route
             exact
@@ -27,7 +29,7 @@ function App() {
             component={isLoggedIn ? HomePage : LoginPage}
           />
         </Switch>
-        {isLoggedIn && <Footer />}
+        {/* {isLoggedIn && <Footer />} */}
       </div>
     </BrowserRouter>
   );
