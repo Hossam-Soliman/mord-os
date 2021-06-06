@@ -26,6 +26,6 @@ export const setSignIn = () => async (dispatch, getState) => {
     dispatch(setIsLoggedInTrue());
     history.push("/");
   } else {
-    console.log("Invalid email or password");
+    alert("Invalied user name or password!");
   }
 };

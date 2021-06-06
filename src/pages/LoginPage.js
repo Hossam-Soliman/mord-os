@@ -31,7 +31,7 @@ const LoginPage = () => {
 
   return (
     <form className='login-form'>
-      <h1>Login</h1>
+      <h1>Mord OS</h1>
       <div className='form-input-material'>
         <input
           type='email'
