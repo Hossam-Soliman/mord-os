@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+:root {
+  --primary-color: hsl(196, 78%, 61%);
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: $light-gray;
+  font-family: "Open Sans", sans-serif;
+}
+
+.home-page-wrapper {
+  padding-top: 50px;
+  background: url(https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  height: 100%;
+
+  .home-page-title {
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    font-size: 50px;
+  }
+}
