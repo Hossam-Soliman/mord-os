@@ -3,7 +3,7 @@ import axios from "axios";
 import { getFromLocalStorage } from "../../services/localStorageService/localStorageService";
 //actions
 import { setLoaderOpenTrue, setLoaderOpenFalse } from "../app/AppActions";
-//selecctors
+//selectors
 import { getUpdatedNewsList, getNewCommentValue } from "./NewsSelectors";
 
 export const setUpdatedNews = () => async (dispatch) => {

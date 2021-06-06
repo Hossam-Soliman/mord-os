@@ -3,6 +3,7 @@ import { updateObject } from "../utility";
 
 const initialState = {
   mediaList: [],
+  imgPath: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,6 +11,12 @@ const reducer = (state = initialState, action) => {
     case "SET_UPDATED_MEDIA": {
       return updateObject(state, {
         mediaList: action.payload,
+      });
+    }
+
+    case "SET_NEW_IMG_VALUE": {
+      return updateObject(state, {
+        imgPath: action.payload,
       });
     }
     default:
