@@ -1,5 +1,4 @@
 import { updateObject } from "../utility";
-// import jwt_decode from 'jwt-decode';
 
 const initialState = {
   isLoggedIn: !!localStorage.getItem("ACCESS_TOKEN"),

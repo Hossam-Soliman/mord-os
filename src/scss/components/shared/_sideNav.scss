@@ -2,7 +2,7 @@
   font-family: "Poppins";
   font-weight: 700;
   height: 100%;
-  width: 150px;
+  width: 140px;
   position: fixed;
   -webkit-animation: slide 0.2s ease;
   -moz-animation: slide 0.2s ease;
@@ -13,6 +13,12 @@
   background-color: #f5f6f7;
   overflow-y: auto;
   z-index: 999;
+
+  .last-item {
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+  }
 }
 .jw-drawer nav {
   width: calc(100% - 20px);

@@ -1,9 +1,6 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
-//pages
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
 //components
 import Footer from "./components/shared/Footer";
 import SideNav from "./components/shared/SideNav";
@@ -14,16 +11,17 @@ import Loader from "./components/shared/Loader";
 //urls
 import { getHomePageUrl, getLoginPageUrl } from "./constants/AppUrls";
 //selectors
-import { getIsLoggedIn } from "./store/app/AppSelectors";
+import { getIsLoggedIn, getIsLoaderOpen } from "./store/app/AppSelectors";
 
 function App() {
-  const isLoggedIn = useSelector((state) => getIsLoggedIn({ state }));
+  const isLoggedIn = useSelector((state) => getIsLoggedIn({ state })),
+    showLoader = useSelector((state) => getIsLoaderOpen({ state }));
+
   return (
     <BrowserRouter>
       <div className='app'>
-        {isLoggedIn && <SideNav />}
-        <Loader />
-
+        {isLoggedIn && !showLoader && <SideNav />}
+        {showLoader && <Loader />}
         <Switch>
           <Redirect
             exact
