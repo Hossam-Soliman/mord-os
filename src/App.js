@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Switch, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 //components
-import Footer from "./components/shared/Footer";
 import SideNav from "./components/shared/SideNav";
 import RegistrationRoute from "./routing/RegistrationRoute";
 import PrivateRoute from "./routing/PrivateRoute";
@@ -44,7 +43,6 @@ function App() {
             />
           ))}
         </Switch>
-        {/* {isLoggedIn && <Footer />} */}
       </div>
     </BrowserRouter>
   );
