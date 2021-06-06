@@ -10,6 +10,7 @@ import SideNav from "./components/shared/SideNav";
 import RegistrationRoute from "./routing/RegistrationRoute";
 import PrivateRoute from "./routing/PrivateRoute";
 import { registerationRoutes, privateRoutes } from "./routing/RoutesConfig";
+import Loader from "./components/shared/Loader";
 //urls
 import { getHomePageUrl, getLoginPageUrl } from "./constants/AppUrls";
 //selectors
@@ -21,18 +22,9 @@ function App() {
     <BrowserRouter>
       <div className='app'>
         {isLoggedIn && <SideNav />}
+        <Loader />
+
         <Switch>
-          {/* <Route
-            exact
-            path='/home'
-            component={isLoggedIn ? HomePage : LoginPage}
-          />
-          <Route exact path='/' render={() => <Redirect to='/home' />} />
-          <Route
-            exact
-            path='/login'
-            component={isLoggedIn ? HomePage : LoginPage}
-          /> */}
           <Redirect
             exact
             from='/'

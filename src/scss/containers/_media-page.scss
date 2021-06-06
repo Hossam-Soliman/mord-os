@@ -1,0 +1,56 @@
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  margin-left: 180px;
+  padding: 0;
+  list-style: none;
+
+  > .item {
+    display: flex;
+    width: 100%;
+  }
+
+  .article-card {
+    margin: 20px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+  }
+  .image {
+    width: 100px;
+    height: 100px;
+  }
+  .meta {
+    margin: 10px 0;
+    font-size: 13px;
+    color: #999;
+  }
+  .link {
+    font-family: "Merriweather", serif;
+    color: red;
+    text-decoration: none;
+  }
+  .lead {
+    line-height: 1.5em;
+    color: #333;
+  }
+
+  .title-style {
+    font-size: 16px;
+    // text-align: center;
+  }
+}
+
+@media all and (min-width: 40em) {
+  .article-list > .item {
+    width: (100%/2);
+  }
+}
+
+@media all and (min-width: 60em) {
+  .article-list > .item {
+    width: (100%/3);
+  }
+}

@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+//svg images
+import HomeImage from "../svgImages/HomeImage";
+import MediaImage from "../svgImages/MediaImage";
+import NewsImage from "../svgImages/NewsImage";
 
 const SideNav = () => {
   return (
@@ -7,13 +11,33 @@ const SideNav = () => {
       <nav>
         <ul>
           <li>
+            <Link to='/'>
+              <HomeImage />
+              Home
+            </Link>
+          </li>
+          <li>
             <Link to='/news'>
-              <svg style={{ width: 42, height: 42 }} viewBox='0 0 24 24'>
-                <path
-                  d='M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z'
-                  fill='#3F51B5'></path>
-              </svg>{" "}
+              <NewsImage />
               News
+            </Link>
+          </li>
+          <li>
+            <Link to='/media'>
+              <MediaImage />
+              Media
+            </Link>
+          </li>
+          {/* <li>
+            <Link to='/media'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'>
+                <path d='M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z' />
+              </svg>
+              Media
             </Link>
           </li>
           <li>
@@ -113,18 +137,7 @@ const SideNav = () => {
               </svg>{" "}
               Tips
             </a>
-          </li>
-
-          <li>
-            <a href='https://www.seotechman.com/p/tutorial.html'>
-              <svg style={{ width: 42, height: 42 }} viewBox='0 0 24 24'>
-                <path
-                  d='M21,2H3A2,2 0 0,0 1,4V20A2,2 0 0,0 3,22H21A2,2 0 0,0 23,20V4A2,2 0 0,0 21,2M11,17.5L9.5,19L5,14.5L9.5,10L11,11.5L8,14.5L11,17.5M14.5,19L13,17.5L16,14.5L13,11.5L14.5,10L19,14.5L14.5,19M21,7H3V4H21V7Z'
-                  fill='#5F4293'></path>
-              </svg>{" "}
-              Tutorial
-            </a>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>
